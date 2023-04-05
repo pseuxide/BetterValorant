@@ -3,7 +3,7 @@ Stretched resolution in VALORANT
 
 This is a fork version that i slightly fixed the usage difficulties that I personally had.
 
-[Original repository](https://github.com/l1m0n3/BetterValorant)
+Original repository -> [l1m0n3/BetterValorant](https://github.com/l1m0n3/BetterValorant)
 
 # premise
 According to my experience, this stretch method only be enabled in-match, meaning when u jump outta match and return to menu, the stretch get automatically canceled. **So u likely have to re-enable everytime the new game(match) starts.** It kinda drags out so I made it easy to on and off the feature.
