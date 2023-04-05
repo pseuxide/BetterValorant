@@ -1,4 +1,4 @@
-﻿#define NOMINMAX
+#define NOMINMAX
 #include <Windows.h>
 #include <ShlObj.h>
 #include <ShlObj_core.h>
@@ -65,10 +65,55 @@ auto WriteValueToConfig(std::string width, std::string height) -> bool
     return true;
 }
 
+HHOOK hHook;
+HWND hWnd;
+DEVMODE devmode;
+HHOOK g_hHook = nullptr;
+
+LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
+{
+    if (nCode == HC_ACTION)
+    {
+        KBDLLHOOKSTRUCT* pKeyboard = reinterpret_cast<KBDLLHOOKSTRUCT*>(lParam);
+        if (pKeyboard->vkCode == VK_OEM_3 && wParam == WM_KEYDOWN)
+        {
+            auto lResult = ChangeDisplaySettings(&devmode, 0);
+            if (lResult != DISP_CHANGE_SUCCESSFUL)
+            {
+                std::cout << "[!] Failed to change display settings!\n";
+                std::cout << "[!] Specified width and height might be unfit for your display. \n";
+                std::cout << "[!] Change them through config file. \n";
+                std::this_thread::sleep_for(3s);
+                return EXIT_FAILURE;
+            }
+
+            auto lStyle = GetWindowLong(hWnd, GWL_STYLE);
+            lStyle &= ~WS_BORDER;
+            SetWindowLongPtr(hWnd, GWL_STYLE, lStyle);
+
+            SetForegroundWindow(hWnd);
+
+            ShowWindow(hWnd, SW_MAXIMIZE);
+        }
+        else if (pKeyboard->vkCode == VK_OEM_5 && wParam == WM_KEYDOWN)
+        {
+            ChangeDisplaySettings(nullptr, 0);
+        }
+        else if (pKeyboard->vkCode == VK_OEM_PLUS && wParam == WM_KEYDOWN)
+        {
+            ChangeDisplaySettings(nullptr, 0);
+            UnhookWindowsHookEx(hHook);
+            exit(0);
+        }
+    }
+
+    return CallNextHookEx(hHook, nCode, wParam, lParam);
+}
+
 auto main() -> int
 {
-    std::cout << "[+] BetterValorant Version: 1.0\n";
-    std::cout << "[+] Source code: https://github.com/l1m0n3/BetterValorant\n";
+    std::cout << "[+] BetterValorant forked version\n";
+    std::cout << "[+] Source code: https://github.com/pseuxide/BetterValorant\n";
     std::cout << "[+] Config file at: %userprofile%/Documents/BetterValorant/config.txt\n";
 
     std::string sWidth, sHeight;
@@ -78,6 +123,8 @@ auto main() -> int
         auto values = ReadValueFromConfig();
         sWidth = values->first;
         sHeight = values->second;
+        std::cout << "width: " << sWidth << std::endl;
+        std::cout << "height: " << sHeight << std::endl;
     }
     else
     {
@@ -88,6 +135,7 @@ auto main() -> int
         std::cin >> sHeight;
 
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        WriteValueToConfig(sWidth, sHeight);
     }
 
     DWORD dwWidth;
@@ -114,55 +162,35 @@ auto main() -> int
         return EXIT_FAILURE;
     }
 
-    auto hWnd = FindWindow(nullptr, L"VALORANT  ");
+
+
+    hWnd = FindWindow(nullptr, L"VALORANT  ");
     if (!hWnd)
     {
-        std::cout << "[!] Failed to find the window!\n";
+        std::cout << "[!] Failed to find the window of Valorant!\n";
         std::this_thread::sleep_for(3s);
         return EXIT_FAILURE;
     }
 
-    DEVMODE devmode;
     devmode.dmPelsWidth = dwWidth;
     devmode.dmPelsHeight = dwHeight;
     devmode.dmFields = DM_PELSWIDTH | DM_PELSHEIGHT;
     devmode.dmSize = sizeof(DEVMODE);
 
-    auto lResult = ChangeDisplaySettings(&devmode, 0);
-    if (lResult != DISP_CHANGE_SUCCESSFUL)
+
+    hHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardProc, nullptr, 0);
+    if (!hHook)
     {
-        std::cout << "[!] Failed to change display settings!\n";
-        std::this_thread::sleep_for(3s);
-        return EXIT_FAILURE;
+        std::cerr << "Failed to install keyboard hook" << std::endl;
+        return 1;
     }
 
-    /*auto lStyle = WS_MAXIMIZEBOX | 
-                   WS_MINIMIZEBOX | 
-                   WS_THICKFRAME | 
-                   WS_SYSMENU | 
-                   WS_DLGFRAME | 
-                   WS_CLIPSIBLINGS | 
-                   WS_VISIBLE;*/
-    auto lStyle = GetWindowLong(hWnd, GWL_STYLE);
-    lStyle &= ~WS_BORDER;
-    SetWindowLongPtr(hWnd, GWL_STYLE, lStyle);
-
-    /*RECT rect;
-    GetClientRect(hWnd, &rect);
-    SetWindowPos(hWnd, HWND_TOPMOST, rect.left, rect.top, rect.right, rect.bottom, SWP_SHOWWINDOW);*/
-
-    SetForegroundWindow(hWnd);
-
-    ShowWindow(hWnd, SW_MAXIMIZE);
-
-    WriteValueToConfig(sWidth, sHeight);
-
-    std::cout << "[+] Enjoy the stretched res :D\n";
-    std::cout << "[+] Press the enter key when you are done playing valorant...\n";
-
-    std::cin.get();
-
-    ChangeDisplaySettings(nullptr, 0);
+    MSG msg;
+    while (GetMessage(&msg, NULL, 0, 0) > 0)
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
 
     return EXIT_SUCCESS;
 }
