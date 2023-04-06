@@ -16,7 +16,7 @@ No clue what makes this happens but menu window tries to resist the true stretch
 4. (initial setting prompt will show up at first launch)
 5. press `~` key to enable true stretch, and `\` key to disable. and `=` key to quit the software. Note that this key settings is only taking my keyboard into account so you might feel it odd.
 
-So basically, everytime u hop into match, u press \` to get true stretched res, and press `=` once u go back menu.
+So basically, everytime u hop into match, u press `~` to get true stretched res, and press `\` once u go back menu.
 
 # FAQ
 Q: How can I use a different resolution? It automatically applies previous resolution setting.
