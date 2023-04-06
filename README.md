@@ -1,7 +1,7 @@
 # BetterValorant
 Stretched resolution in VALORANT
 
-This is a fork version that i slightly fixed the usage difficulties that I personally had.
+This is a forked version that i slightly fixed the usage difficulties that I personally had. Instead of make a pull request, i keep it as forked version as the change is just a preference level imo.
 
 Original repository -> [l1m0n3/BetterValorant](https://github.com/l1m0n3/BetterValorant)
 
