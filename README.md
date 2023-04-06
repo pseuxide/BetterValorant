@@ -6,7 +6,7 @@ This is a forked version that i slightly fixed the usage difficulties that I per
 Original repository -> [l1m0n3/BetterValorant](https://github.com/l1m0n3/BetterValorant)
 
 # premise
-According to my experience, this stretch method only be enabled in-match, meaning when u jump outta match and return to menu, the stretch get automatically canceled. **So u likely have to re-enable everytime the new game(match) starts.** It kinda drags out so I made it easy to on and off the feature.
+According to my experience, this stretch method only be enabled in-match, meaning when u jump outta match and return to menu, the stretch get automatically canceled. **So u likely have to re-enable everytime the new game(match) starts.** It's such a drag so I made it easy to on and off the feature.
 No clue what makes this happens but menu window tries to resist the true stretch ends up letterboxing.
 
 # How to use
