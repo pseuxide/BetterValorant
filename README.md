@@ -1,11 +1,13 @@
 # BetterValorant
 Stretched resolution in VALORANT
 
-This is a forked version that i slightly fixed the usage difficulties that I personally had. Instead of make a pull request, i keep it as forked version as the change is just a preference level imo.
+This is a forked version that you can now have keybind to on/off the true stretched res.
 
-Original repository -> [l1m0n3/BetterValorant](https://github.com/l1m0n3/BetterValorant)
+I keep this as forked version for now as the change is just a preference level imho.
 
-# premise
+### Original repository -> [l1m0n3/BetterValorant](https://github.com/l1m0n3/BetterValorant)
+
+# Premise
 According to my experience, this stretch method only be enabled in-match, meaning when u jump outta match and return to menu, the stretch get automatically canceled. **So u likely have to re-enable everytime the new game(match) starts.** It's such a drag so I made it easy to on and off the feature.
 No clue what makes this happens but menu window tries to resist the true stretch ends up letterboxing.
 
@@ -14,9 +16,11 @@ No clue what makes this happens but menu window tries to resist the true stretch
 2. Valorant in-game setting, set your "Aspect Ratio Method" to "Fill"
 3. Launch BetterValorant.exe
 4. (initial setting prompt will show up at first launch)
-5. press `~` key to enable true stretch, and `\` key to disable. and `=` key to quit the software. Note that this key settings is only taking my keyboard into account so you might feel it odd.
+5. press `\` key to enable/disable true stretch and `=` key to quit the software.
 
-So basically, everytime u hop into match, u press `~` to get true stretched res, and press `\` once u go back menu.
+So basically, everytime u hop into match, u press `\` to get true stretched res, and press `\` once u go back menu.
+
+my recommend resolution is 1280 x 960.
 
 # FAQ
 Q: How can I use a different resolution? It automatically applies previous resolution setting.
