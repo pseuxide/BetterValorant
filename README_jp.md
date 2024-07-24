@@ -14,15 +14,18 @@ Valorantの引き延ばしツールです。これを使うと敵やマップご
 このツールにはON/OFFのキーバインドがあるので、マッチが始まったタイミングでON、終わったらOFFにしてください。
 
 ## 使い方
-1. まず[Release](https://github.com/vxcall/BetterValorant/releases/tag/BetterValorant-vxcall1.0)からBetterValorant.exeをダウンロードしてください。
-2. Valorantを起動してください
-3. Valorantのゲーム内設定のグラフィックから画面モードをウィンドウにしてください
-4. Valorantのゲーム内設定のグラフィックからアスペクト比設定をフィルにしてください
+1.Nvidia control panelを開いて、デスクトップサイズと位置の調整 -> スケーリングモードを画像のように全画面表示にしてください。
+![image](https://github.com/user-attachments/assets/d93fcd62-dbc6-46da-8154-8a52ddb8b56f)
+
+2. その後[Release](https://github.com/vxcall/BetterValorant/releases/tag/BetterValorant-vxcall1.0)からBetterValorant.exeをダウンロードしてください。
+3. Valorantを起動してください
+4. Valorantのゲーム内設定のグラフィックから画面モードをウィンドウにしてください
+5. Valorantのゲーム内設定のグラフィックからアスペクト比設定をフィルにしてください
    ![image](https://github.com/user-attachments/assets/bc011f79-28ac-43fc-a17e-6a0634918384)
-5. BetterValorant.exeを起動してください
-6. 初回起動時のみ、引き延ばすため画面の解像度を決めるためのプロンプトが表示されます。1280 x 960がお勧めです。
+6. BetterValorant.exeを起動してください
+7. 初回起動時のみ、引き延ばすため画面の解像度を決めるためのプロンプトが表示されます。1280 x 960がお勧めです。
  ![image](https://github.com/user-attachments/assets/556cf15b-252a-4226-a0d1-febc9ac976ed)
-7. これで準備完了です。 `\` (バックスラッシュ)キーを押すと引き延ばし、`=` キーを押すと元に戻せます。何度でもオンオフできます。
+8. これで準備完了です。 `\` (バックスラッシュ)キーを押すと引き延ばし、`=` キーを押すと元に戻せます。何度でもオンオフできます。
 
 # 覚えておいてほしいこと
 前提にも書きましたが、基本試合に入ってから `\` キーを押す、終わったら`=`キーを押して戻してください。
