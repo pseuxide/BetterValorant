@@ -1,3 +1,4 @@
+[日本語マニュアル](https://github.com/vxcall/BetterValorant/blob/master/README_jp.md)
 # BetterValorant
 Stretched resolution in VALORANT
 
