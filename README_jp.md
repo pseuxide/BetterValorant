@@ -17,7 +17,7 @@ Valorantの引き延ばしツールです。これを使うと敵やマップご
 1.Nvidia control panelを開いて、デスクトップサイズと位置の調整 -> スケーリングモードを画像のように全画面表示にしてください。
 ![image](https://github.com/user-attachments/assets/d93fcd62-dbc6-46da-8154-8a52ddb8b56f)
 
-2. その後[Release](https://github.com/vxcall/BetterValorant/releases/tag/BetterValorant-vxcall1.0)からBetterValorant.exeをダウンロードしてください。
+2. その後[Release](https://github.com/vxcall/BetterValorant/releases/tag/BetterValorant-vxcall1.1)からBetterValorant.exeをダウンロードしてください。
 3. Valorantを起動してください
 4. Valorantのゲーム内設定のグラフィックから画面モードをウィンドウにしてください
 5. Valorantのゲーム内設定のグラフィックからアスペクト比設定をフィルにしてください
