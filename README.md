@@ -13,12 +13,16 @@ According to my experience, this stretch method only be enabled in-match, meanin
 No clue what makes this happens but menu window tries to resist the true stretch ends up letterboxing.
 
 # How to use
-1. Valorant in-game setting set your "Display Mode" to "Windowed"
-2. Valorant in-game setting, set your "Aspect Ratio Method" to "Fill"
-3. Launch BetterValorant.exe
-4. At initial launch setting prompt will show up to configure width and height. My recommendation is 1280 x 960.
+1.open Nvidia control panel, and set scaling mode to this one. i guess it's supposed to be 'full window'? (not sure the English version)
+![image](https://github.com/user-attachments/assets/d93fcd62-dbc6-46da-8154-8a52ddb8b56f)
+2. install BetterValorant from [Release](https://github.com/vxcall/BetterValorant/releases/tag/BetterValorant-vxcall1.1)
+3. Launch Valorant
+4. Valorant in-game setting set your "Display Mode" to "Windowed"
+5. Valorant in-game setting, set your "Aspect Ratio Method" to "Fill"
+6. Launch BetterValorant.exe
+7. At initial launch setting prompt will show up to configure width and height. My recommendation is 1280 x 960.
    ![image](https://github.com/user-attachments/assets/556cf15b-252a-4226-a0d1-febc9ac976ed)
-6. press `[` key to enable/disable true stretch and `]` key to quit the software.
+8. press `[` key to enable/disable true stretch and `]` key to quit the software.
 
 So basically, everytime u hop into match, u press `[` to get true stretched res, and press `]` once u go back menu. If u have any suggestion for keybind, open an issue and tell me
 
