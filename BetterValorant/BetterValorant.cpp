@@ -76,8 +76,8 @@ LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
   if (nCode == HC_ACTION)
   {
     KBDLLHOOKSTRUCT* pKeyboard = reinterpret_cast<KBDLLHOOKSTRUCT*>(lParam);
-    //VK_OEM_5 is backslash key
-    if (pKeyboard->vkCode == VK_OEM_5 && wParam == WM_KEYDOWN)
+    //VK_OEM_4 is [ key
+    if (pKeyboard->vkCode == VK_OEM_4 && wParam == WM_KEYDOWN)
     {
       if (!g_b_enabled)
       {
@@ -106,8 +106,8 @@ LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
         g_b_enabled = false;
       }
     }
-    //VK_OEM_PLUS is equals key
-    else if (pKeyboard->vkCode == VK_OEM_PLUS && wParam == WM_KEYDOWN)
+    //VK_OEM_6 is ] key
+    else if (pKeyboard->vkCode == VK_OEM_6 && wParam == WM_KEYDOWN)
     {
       ChangeDisplaySettings(nullptr, 0);
       UnhookWindowsHookEx(hHook);
@@ -122,8 +122,8 @@ auto main() -> int
 {
   std::cout << "[+] BetterValorant forked version\n";
   std::cout << "[+] Config file at: %userprofile%/Documents/BetterValorant/config.txt\n";
-  std::cout << "press back-slash key to enable / disable." << std::endl;
-  std::cout << "press equals key to quit gracefully." << std::endl;
+  std::cout << "PRESS \"[\" key to enable / disable." << std::endl;
+  std::cout << "PRESS \"]\" key to quit gracefully." << std::endl;
 
   std::string sWidth, sHeight;
 
