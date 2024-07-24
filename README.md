@@ -16,12 +16,11 @@ No clue what makes this happens but menu window tries to resist the true stretch
 1. Valorant in-game setting set your "Display Mode" to "Windowed"
 2. Valorant in-game setting, set your "Aspect Ratio Method" to "Fill"
 3. Launch BetterValorant.exe
-4. (initial setting prompt will show up at first launch)
-5. press `\` key to enable/disable true stretch and `=` key to quit the software.
+4. At initial launch setting prompt will show up to configure width and height. My recommendation is 1280 x 960.
+   ![image](https://github.com/user-attachments/assets/556cf15b-252a-4226-a0d1-febc9ac976ed)
+6. press `\` key to enable/disable true stretch and `=` key to quit the software.
 
-So basically, everytime u hop into match, u press `\` to get true stretched res, and press `\` once u go back menu.
-
-my recommend resolution is 1280 x 960.
+So basically, everytime u hop into match, u press `\` to get true stretched res, and press `\` once u go back menu. If u have any suggestion for keybind, open an issue and tell me
 
 # FAQ
 Q: How can I use a different resolution? It automatically applies previous resolution setting.
